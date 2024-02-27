@@ -1,0 +1,22 @@
+<h1>Bienvenido al e-commerce</h1>
+
+<ul>
+  {{#each products}}
+    <div class="card">
+      <p>{{this.title}} </p>
+      <p>{{this.description}} </p>
+      <p>{{this.price}} </p>
+      <button>Agregar al carrito</button>
+    </div>
+  {{/each}}
+</ul>
+
+{{#if hasPrevPage}}
+  <a href={{prevLink}}> Anterior </a>
+{{/if}}
+
+{{#if hasNextPage}}
+  <a href={{nextLink}}> Siguiente </a>
+{{/if}}
+
+<p>Pagina {{currentPage}} de {{totalPages}} </p>

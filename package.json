@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "mongoose": "^8.1.1",
+    "mongoose-paginate-v2": "^1.8.0",
+    "node": "^21.2.0",
+    "nodemon": "^3.0.2",
+    "socket.io": "^4.7.4"
+  },
+  "name": "desafio-back-end",
+  "version": "1.0.0",
+  "description": "tercer desafio",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "Pablo Rinaldi",
+  "license": "ISC"
+}

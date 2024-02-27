@@ -1,0 +1,19 @@
+<h1>Bienvenido al e-commerce</h1>
+
+<div>
+  <h1>Carrito</h1>
+  <div>
+    <h2>Productos:</h2>
+    <ul>
+      {{#each products}}
+        <div class="card">
+          <p>{{this.product.title}} </p>
+          <p>{{this.product.description}} </p>
+          <p>{{this.product.price}} </p>
+        </div>
+        <hr />
+      {{/each}}
+    </ul>
+
+  </div>
+</div>
