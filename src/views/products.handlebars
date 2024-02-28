@@ -1,4 +1,4 @@
-<h1>Bienvenido al e-commerce</h1>
+<h1>Bienvenido al e-commerce {{user.first_name}} ({{user.rol}})</h1>
 
 <ul>
   {{#each products}}
@@ -20,3 +20,5 @@
 {{/if}}
 
 <p>Pagina {{currentPage}} de {{totalPages}} </p>
+
+<a href="/api/sessions/logout">Logout</a>

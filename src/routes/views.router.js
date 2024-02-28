@@ -25,6 +25,7 @@ router.get("/products", async (req, res) => {
     });
 
     res.render("products", {
+      user: req.session.user,
       products: productsResultadoFinal,
       hasPrevPage: products.hasPrevPage,
       hasNextPage: products.hasNextPage,
@@ -61,6 +62,37 @@ router.get("/cart/:cid", async (req, res) => {
   } catch (error) {
     console.error("Error al obtener el carrito", error);
   }
+});
+
+router.get("/", (req, res) => {
+  if (req.session.login) {
+    return res.redirect("/profile");
+  }
+
+  res.render("login");
+});
+
+router.get("/login", (req, res) => {
+  if (req.session.login) {
+    return res.redirect("/profile");
+  }
+
+  res.render("login");
+});
+
+router.get("/register", (req, res) => {
+  if (req.session.login) {
+    return res.redirect("/profile");
+  }
+  res.render("register");
+});
+
+router.get("/profile", (req, res) => {
+  if (!req.session.login) {
+    return res.redirect("/login");
+  }
+
+  res.render("profile", { user: req.session.user });
 });
 
 module.exports = router;
