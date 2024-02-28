@@ -2,8 +2,6 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const passport = require("passport");
-const initializePassport = require("./config/passport.config.js");
 
 const exphbs = require("express-handlebars");
 
@@ -33,9 +31,6 @@ app.use(
     }),
   })
 );
-initializePassport();
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
