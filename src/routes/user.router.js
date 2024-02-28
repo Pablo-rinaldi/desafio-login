@@ -31,7 +31,7 @@ router.post("/register", async (req, res) => {
 
     req.session.user = { ...newUser._doc };
 
-    res.status(200).send({ message: "Usuario creado con éxito" });
+    res.redirect("/products");
   } catch (error) {
     console.error("Error al crear el usuario:", error);
     res.status(500).send({ error: "Error interno del servidor" });
